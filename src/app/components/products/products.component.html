@@ -1,0 +1,19 @@
+<p>
+  My Shopping Cart: {{ myShoppingCart.length }}
+</p>
+<p>
+  Total : {{ total | currency:'USD' }}
+</p>
+<p>
+  Today : {{ today | date }}
+</p>
+<p>
+  Another Day : {{ anotherDate | date: 'short' }}
+</p>
+<p>
+  Reactive Data : {{ counter }}
+</p>
+<div class="products--grid">
+  <app-product [product]="product" (addedProduct)="onAddToShoppingCart($event)"
+    *ngFor="let product of productList"></app-product>
+</div>
